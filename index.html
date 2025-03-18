@@ -90,6 +90,22 @@
             object-fit: cover;
             margin-bottom: 10px;
         }
+        /* Designs Section Styles */
+        #designs {
+            padding: 50px 20px;
+            background-color: #fff;
+        }
+        #designs .design-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        #designs .design-item img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            padding: 5px;
+        }
         form input, form textarea, form button {
             width: 100%;
             padding: 10px;
@@ -175,7 +191,32 @@
             <a href="all_products.html" class="btn">View All Items</a>
         </div>
     </section>
- 
+    
+    <!-- New Designs Section -->
+    <section id="designs">
+        <div class="container">
+            <h2>Our Designs</h2>
+            <p>Explore our latest designs that complement our bag collection.</p>
+            <div class="design-grid">
+                <div class="design-item">
+                    <img src="images/1.jpg" alt="Design 1">
+                </div>
+                <div class="design-item">
+                    <img src="images/2.jpg" alt="Design 2">
+                </div>
+                <div class="design-item">
+                    <img src="images/3.jpg" alt="Design 3">
+                </div>
+                <div class="design-item">
+                    <img src="images/4.jpg" alt="Design 4">
+                </div>
+                <div class="design-item">
+                    <img src="images/5.jpg" alt="Design 5">
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <section id="contact">
         <div class="container">
             <h2>Contact Us</h2>
