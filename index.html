@@ -2,41 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bestie Fashion Shop - Home</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <!-- Swiper CSS for the carousel -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bestie Shop Online - Home</title>
+  <!-- Google Font for a fancy header -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <!-- Swiper CSS for Carousel -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- Font Awesome (for optional arrow styling, if desired) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+    /* Global Styles */
+    * {
       box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
       background-color: #f9f9f9;
       color: #333;
     }
+
+    /* Header */
     header {
       background-color: #333;
       color: #fff;
-      padding: 20px 0;
       text-align: center;
+      padding: 20px 0;
     }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
+    header h1 {
+      font-family: 'Lobster', cursive;
+      font-size: 3rem;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
     nav ul {
       list-style-type: none;
       padding: 0;
+      margin-top: 10px;
       display: flex;
       justify-content: center;
       gap: 20px;
-    }
-    nav ul li {
-      display: inline;
     }
     nav ul li a {
       color: #fff;
@@ -47,34 +53,74 @@
     nav ul li a:hover {
       color: #ffd700;
     }
-    h1, h2, h3 {
-      color: #222;
+
+    /* Container utility */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
     }
+
+    /* Hero / Banner Section */
     #home {
+      position: relative;
+      min-height: 80vh;
+      background: url('images/35.jpg') center center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 100px 20px;
-      background-image: url('banner.jpg');
-      background-size: cover;
       color: #fff;
+    }
+    #home::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+    #home .banner-content {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+    }
+    #home h2 {
+      font-size: 2.5rem;
+      margin: 0 0 10px;
+    }
+    #home p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
     }
     .btn {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 12px 25px;
       background-color: #ff6600;
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
-      margin-top: 20px;
+      font-weight: bold;
       transition: background-color 0.3s;
     }
     .btn:hover {
       background-color: #ff4500;
     }
+
+    /* Products Section */
+    #products {
+      padding: 50px 20px;
+      background-color: #fff;
+    }
+    #products h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
-      padding: 20px;
     }
     .product-item {
       background-color: #fff;
@@ -82,49 +128,86 @@
       border: 1px solid #ddd;
       text-align: center;
       transition: transform 0.3s;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     .product-item:hover {
-      transform: scale(1.05);
+      transform: translateY(-3px);
     }
     .product-item img {
       width: 100%;
-      height: 200px;
+      max-height: 180px; /* Limit product image height */
       object-fit: cover;
       margin-bottom: 10px;
+      border-radius: 5px;
     }
-    /* Designs Section (Swiper Carousel) */
+
+    /* Designs Section (Carousel) */
     #designs {
       padding: 50px 20px;
-      background-color: #fff;
+      background-color: #fefefe;
       text-align: center;
     }
     #designs h2 {
       margin-bottom: 10px;
+      font-size: 2rem;
+    }
+    #designs p {
+      margin-bottom: 30px;
+      font-size: 1rem;
+      color: #555;
     }
     .swiper-container {
       width: 100%;
       padding-top: 20px;
       padding-bottom: 40px;
+      position: relative;
     }
     .swiper-slide {
-      background: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
     }
     .swiper-slide img {
-      width: 100%;
-      height: auto;
+      max-width: 100%;
+      max-height: 300px; /* Limit carousel image size */
+      object-fit: cover;
       border: 1px solid #ddd;
+      border-radius: 5px;
       padding: 5px;
       transition: transform 0.3s;
     }
     .swiper-slide img:hover {
       transform: scale(1.05);
     }
+    /* Make the navigation arrows clickable (pointer) */
+    .swiper-button-next,
+    .swiper-button-prev {
+      cursor: pointer;
+    }
+    /* Optional: Make the default arrows a bit larger */
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 24px; 
+    }
+
+    /* Contact Section */
+    #contact {
+      padding: 50px 20px;
+      background-color: #fff;
+    }
+    #contact h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
     form input, form textarea, form button {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       margin: 10px 0;
       border: 1px solid #ccc;
       border-radius: 5px;
@@ -132,12 +215,15 @@
     form button {
       background-color: #333;
       color: #fff;
+      font-weight: bold;
       cursor: pointer;
       transition: background-color 0.3s;
     }
     form button:hover {
       background-color: #555;
     }
+
+    /* Footer */
     footer {
       background-color: #333;
       color: #fff;
@@ -145,15 +231,20 @@
       padding: 20px;
       margin-top: 20px;
     }
+    footer p {
+      margin: 0;
+    }
     .social-links {
       display: flex;
       justify-content: center;
       gap: 20px;
       margin-top: 10px;
     }
+    /* Force logos to uniform size */
     .social-links a img {
       width: 30px;
-      height: auto;
+      height: 30px;
+      object-fit: contain;
       transition: opacity 0.3s;
     }
     .social-links a img:hover {
@@ -162,44 +253,46 @@
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <div class="container">
-      <h1>Bestie Fashion Shop</h1>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="all_products.html">All Items</a></li>
-        </ul>
-      </nav>
-    </div>
+    <h1>Bestie Shop Online</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="all_products.html">All Items</a></li>
+      </ul>
+    </nav>
   </header>
- 
+
+  <!-- Hero / Banner Section -->
   <section id="home">
-    <div class="container">
+    <div class="banner-content">
       <h2>Welcome to Our Store!</h2>
       <p>We sell high-quality bags, garments, gold, and much more!</p>
       <a href="#products" class="btn">Explore Products</a>
     </div>
   </section>
- 
+
+  <!-- Products Section -->
   <section id="products">
     <div class="container">
       <h2>Featured Products</h2>
       <div class="product-grid">
         <div class="product-item">
-          <img src="bag.jpg" alt="Bag">
+          <img src="images/1.jpg" alt="Bag">
           <h3>Bag</h3>
           <p>$50.00</p>
         </div>
         <div class="product-item">
-          <img src="garment.jpg" alt="Garment">
+          <img src="images/2.jpg" alt="Garment">
           <h3>Garment</h3>
           <p>$30.00</p>
         </div>
         <div class="product-item">
-          <img src="gold.jpg" alt="Gold">
+          <img src="images/3.jpg" alt="Gold">
           <h3>Gold</h3>
           <p>$1000.00</p>
         </div>
@@ -207,19 +300,21 @@
       <a href="all_products.html" class="btn">View All Items</a>
     </div>
   </section>
-  
-  <!-- New Designs Section with a Swiper Carousel -->
+
+  <!-- Designs Section (Carousel) -->
   <section id="designs">
     <div class="container">
       <h2>Our Designs</h2>
       <p>Explore our latest designs that complement our bag collection.</p>
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="images/1.jpg" alt="Design 1"></div>
-          <div class="swiper-slide"><img src="images/2.jpg" alt="Design 2"></div>
-          <div class="swiper-slide"><img src="images/3.jpg" alt="Design 3"></div>
+          <!-- Each slide is one image; 3 slides will be visible at once -->
           <div class="swiper-slide"><img src="images/4.jpg" alt="Design 4"></div>
           <div class="swiper-slide"><img src="images/5.jpg" alt="Design 5"></div>
+          <div class="swiper-slide"><img src="images/6.jpg" alt="Design 6"></div>
+          <div class="swiper-slide"><img src="images/7.jpg" alt="Design 7"></div>
+          <div class="swiper-slide"><img src="images/8.jpg" alt="Design 8"></div>
+          <!-- Add more slides if you like -->
         </div>
         <!-- Pagination and Navigation Controls -->
         <div class="swiper-pagination"></div>
@@ -228,42 +323,43 @@
       </div>
     </div>
   </section>
-  
+
+  <!-- Contact Section -->
   <section id="contact">
     <div class="container">
       <h2>Contact Us</h2>
       <form action="/submit_form" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
         <button type="submit">Send</button>
       </form>
     </div>
   </section>
-  
+
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 Bestie Fashion Shop. All Rights Reserved.</p>
+      <p>&copy; 2026 Bestie Shop Online. All Rights Reserved.</p>
       <div class="social-links">
-        <!-- Social logos -->
+        <!-- If you cannot rename the files to remove spaces, encode them as %20 -->
         <a href="https://www.facebook.com/profile.php?id=61574490534554" target="_blank">
-          <img src="images/facebook-logo.png" alt="Facebook Logo">
+          <img src="images/Facebook-Logo.png" alt="Facebook Logo">
         </a>
         <a href="https://www.instagram.com/" target="_blank">
-          <img src="images/instagram-logo.png" alt="Instagram Logo">
+          <img src="images/instagram%20logo.png" alt="Instagram Logo">
         </a>
         <a href="https://www.tiktok.com/@carlaabanador21?is_from_webapp=1&sender_device=pc" target="_blank">
-          <img src="images/tiktok-logo.png" alt="TikTok Logo">
+          <img src="images/tiktok%20logo.png" alt="TikTok Logo">
         </a>
-        <!-- Shopee remains as icon -->
         <a href="https://shopee.ph/bestiefashionshop?entryPoint=ShopBySearch&searchKeyword=bestie%20fashion%20shop" target="_blank">
-          <i class="fas fa-shopping-bag" style="font-size:24px;color:#ffd700;"></i>
+          <img src="images/shopee%20logo.png" alt="Shopee Logo">
         </a>
       </div>
     </div>
   </footer>
-  
-  <!-- Swiper JS for Carousel -->
+
+  <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
     var swiper = new Swiper('.swiper-container', {
@@ -272,6 +368,8 @@
         delay: 3000,
         disableOnInteraction: false,
       },
+      slidesPerView: 3,  // Show 3 slides at once
+      spaceBetween: 20,  // Spacing between slides in px
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -280,6 +378,12 @@
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
+      // Optional responsive breakpoints
+      breakpoints: {
+        640: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
     });
   </script>
 </body>
