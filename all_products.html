@@ -91,7 +91,7 @@
       border-radius: 4px;
     }
     
-    /* Main Container: Sidebar + Main Content */
+    /* Container for Sidebar + Main Content */
     .container {
       display: flex;
       max-width: 1200px;
@@ -231,10 +231,10 @@
     <a href="https://www.instagram.com/" target="_blank">
       <img src="images/instagram%20logo.jpg" alt="Instagram Logo">
     </a>
-    <a href="https://www.tiktok.com/@carlaabanador21?is_from_webapp=1&sender_device=pc" target="_blank">
+    <a href="https://www.tiktok.com/@carlaabanador21?is_from_webapp=1&amp;sender_device=pc" target="_blank">
       <img src="images/tiktok%20logo.jpg" alt="TikTok Logo">
     </a>
-    <a href="https://shopee.ph/bestiefashionshop?entryPoint=ShopBySearch&searchKeyword=bestie%20fashion%20shop" target="_blank">
+    <a href="https://shopee.ph/bestiefashionshop?entryPoint=ShopBySearch&amp;searchKeyword=bestie%20fashion%20shop" target="_blank">
       <img src="images/shopee%20logo.jpg" alt="Shopee Logo">
     </a>
   </div>
@@ -277,7 +277,7 @@
   </footer>
 
   <script>
-    // Function to toggle categories
+    // Toggle category sections
     function showCategory(category) {
       document.querySelectorAll('.category-section').forEach(sec => {
         sec.classList.remove('active');
@@ -285,7 +285,7 @@
       document.getElementById(category).classList.add('active');
     }
 
-    // Populate Bags (images 1.jpg to 29.jpg)
+    // Populate Bags (1.jpg to 29.jpg)
     const bagsGrid = document.getElementById('bags-grid');
     for (let i = 1; i <= 29; i++) {
       const div = document.createElement('div');
@@ -297,7 +297,7 @@
       bagsGrid.appendChild(div);
     }
 
-    // Populate Golds (remove extension from displayed title)
+    // Populate Golds (display title without extension)
     const goldFilenames = ["1.jpg", "2.jpg", "3.jpg", "4.png", "5.jpg", "6.jpg", "7.jpg", "9.jpg", "10.jpg"];
     const goldsGrid = document.getElementById('golds-grid');
     goldFilenames.forEach(file => {
