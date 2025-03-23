@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View All Items - Bestie Fashion Shop</title>
+  <!-- Google Fonts (example: Lobster for heading, plus a neutral sans-serif) -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* 
+      Color palette inspired by a warm, neutral, brown/beige style:
+      - Light background: #f8f4f0
+      - Darker text color: #3d2c1e
+      - Accent brown: #a1907a or #b9a89c
+      - Subtle border: #dcd3cb or #b9a89c
+    */
+
+    /* Global Reset & Body */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #f8f4f0; /* warm off-white background */
+      color: #3d2c1e;       /* darker brown text */
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      width: 100%;
+      background: #fff; /* a simple white header */
+      border-bottom: 2px solid #b9a89c; /* subtle brown accent border */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 20px 0;
+    }
+    header h1 {
+      font-family: 'Lobster', cursive;
+      font-size: 2.5rem;
+      color: #3d2c1e; /* dark brown text for the brand name */
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li a {
+      color: #3d2c1e;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #b9a89c; /* hover with lighter brown accent */
+    }
+
+    /* Fixed Socials Panel (on the right) */
+    .fixed-socials {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background: rgba(185,168,156, 0.8); /* slightly transparent accent */
+      padding: 10px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      z-index: 10000;
+    }
+    .fixed-socials a {
+      display: block;
+      margin: 10px 0;
+    }
+    .fixed-socials img {
+      width: 32px;
+      height: 32px;
+      object-fit: cover;
+      border: 1px solid #b9a89c;
+      border-radius: 4px;
+    }
+
+    /* Container for Sidebar + Main Content */
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+      gap: 20px;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      width: 220px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #dcd3cb; /* lighter border */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+    .sidebar h2 {
+      font-size: 1.6rem;
+      margin-top: 0;
+      color: #3d2c1e;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar ul li {
+      margin-bottom: 10px;
+    }
+    .sidebar ul li a {
+      color: #3d2c1e;
+      text-decoration: none;
+      font-size: 1rem;
+      display: block;
+      padding: 8px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .sidebar ul li a:hover {
+      background: #f1ede9;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      flex: 1;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid #dcd3cb;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      min-height: 600px;
+    }
+    .main-content h2 {
+      font-size: 2rem;
+      color: #3d2c1e;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .product-item {
+      background: #f8f4f0; /* same as body, but could be slightly different if desired */
+      padding: 10px;
+      border: 1px solid #dcd3cb;
+      border-radius: 5px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .product-item img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #dcd3cb;
+    }
+    .product-item h3 {
+      font-size: 1.1rem;
+      margin: 0;
+      color: #3d2c1e;
+    }
+
+    /* Category Sections: hidden by default */
+    .category-section {
+      display: none;
+    }
+    .category-section.active {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+      background: #fff;
+      border-top: 2px solid #b9a89c;
+      color: #3d2c1e;
+    }
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Bestie Fashion Shop</h1>
+    <nav>
+      <ul>
+        <!-- Link to your main homepage (index.html) -->
+        <li><a href="index.html">Home</a></li>
+        <!-- Additional links if needed -->
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Fixed Socials Panel (Right Side) -->
+  <div class="fixed-socials">
+    <!-- Example: Facebook, Instagram, TikTok, Shopee (use your local paths) -->
+    <a href="https://www.facebook.com/profile.php?id=61574490534554" target="_blank">
+      <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/Facebook-Logo.jpg" alt="Facebook Logo">
+    </a>
+    <a href="https://www.instagram.com/" target="_blank">
+      <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/instagram%20logo.jpg" alt="Instagram Logo">
+    </a>
+    <a href="https://www.tiktok.com/@carlaabanador21?is_from_webapp=1&sender_device=pc" target="_blank">
+      <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/tiktok%20logo.jpg" alt="TikTok Logo">
+    </a>
+    <a href="https://shopee.ph/bestiefashionshop?entryPoint=ShopBySearch&searchKeyword=bestie%20fashion%20shop" target="_blank">
+      <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/shopee%20logo.jpg" alt="Shopee Logo">
+    </a>
+  </div>
+
+  <!-- Main Container: Sidebar + Main Content -->
+  <div class="container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <h2>Categories</h2>
+      <ul>
+        <li><a href="#" onclick="showCategory('bags')">Bags</a></li>
+        <li><a href="#" onclick="showCategory('golds')">Golds</a></li>
+        <li><a href="#" onclick="showCategory('garments')">Garments</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content with Category Sections -->
+    <section class="main-content">
+      <!-- Bags Category: images 1.jpg to 29.jpg from main folder -->
+      <div id="bags" class="category-section active">
+        <h2>Bags</h2>
+        <div class="product-grid" id="bags-grid"></div>
+      </div>
+      <!-- Golds Category -->
+      <div id="golds" class="category-section">
+        <h2>Golds</h2>
+        <div class="product-grid" id="golds-grid"></div>
+      </div>
+      <!-- Garments Category -->
+      <div id="garments" class="category-section">
+        <h2>Garments</h2>
+        <div class="product-grid" id="garments-grid"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Bestie Fashion Shop. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Function to show selected category
+    function showCategory(category) {
+      document.querySelectorAll('.category-section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      document.getElementById(category).classList.add('active');
+    }
+
+    // Populate Bags (1.jpg to 29.jpg)
+    const bagsGrid = document.getElementById('bags-grid');
+    for (let i = 1; i <= 29; i++) {
+      const div = document.createElement('div');
+      div.className = 'product-item';
+      div.innerHTML = `
+        <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/${i}.jpg" alt="Bag ${i}">
+        <h3>Bag ${i}</h3>
+      `;
+      bagsGrid.appendChild(div);
+    }
+
+    // Populate Golds (remove extension from displayed name)
+    const goldFilenames = ["1.jpg", "2.jpg", "3.jpg", "4.png", "5.jpg", "6.jpg", "7.jpg", "9.jpg", "10.jpg"];
+    const goldsGrid = document.getElementById('golds-grid');
+    goldFilenames.forEach(file => {
+      const name = file.split('.')[0]; // remove extension
+      const div = document.createElement('div');
+      div.className = 'product-item';
+      div.innerHTML = `
+        <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/golds/${file}" alt="Gold ${name}">
+        <h3>Gold ${name}</h3>
+      `;
+      goldsGrid.appendChild(div);
+    });
+
+    // Populate Garments (dresses 1.jpg to 6.jpg)
+    const garmentsGrid = document.getElementById('garments-grid');
+    for (let i = 1; i <= 6; i++) {
+      const div = document.createElement('div');
+      div.className = 'product-item';
+      div.innerHTML = `
+        <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/dresses/${i}.jpg" alt="Garment ${i}">
+        <h3>Garment ${i}</h3>
+      `;
+      garmentsGrid.appendChild(div);
+    }
+  </script>
+</body>
+</html>

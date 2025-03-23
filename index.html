@@ -3,15 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<<<<<<< HEAD
   <title>Bestie Shop Online - Home</title>
   <!-- Google Font for a fancy header -->
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+=======
+  <title>Bestie Fashion Shop - Warm Brown Design</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
   <!-- Swiper CSS for Carousel -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <!-- Font Awesome (for optional arrow styling, if desired) -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <style>
+<<<<<<< HEAD
     /* Global Styles */
     * {
       box-sizing: border-box;
@@ -43,27 +50,111 @@
       display: flex;
       justify-content: center;
       gap: 20px;
+=======
+    /* 
+      Warm brown/beige palette:
+      - Light background: #f8f4f0
+      - Dark text: #3d2c1e
+      - Accent brown: #b9a89c or #dcd3cb
+      - Subtle borders: #dcd3cb
+    */
+
+    /* Global Reset & Body */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      /* Light, warm background (no harsh gradient) */
+      background: #f8f4f0; 
+      color: #3d2c1e;
+      overflow-x: hidden;
+    }
+
+    /* Header (Light with Brown Accent) */
+    header {
+      width: 100%;
+      background: #fff; /* a simple light header */
+      border-bottom: 2px solid #b9a89c; /* subtle brown accent border */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-family: 'Lobster', cursive;
+      font-size: 2.4rem;
+      color: #3d2c1e;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin-top: 10px;
+      padding: 0;
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
     }
     nav ul li a {
-      color: #fff;
       text-decoration: none;
-      font-size: 18px;
+      color: #3d2c1e;
+      font-weight: 600;
+      font-size: 1rem;
       transition: color 0.3s;
     }
     nav ul li a:hover {
-      color: #ffd700;
+      color: #b9a89c; /* lighter brown accent on hover */
     }
 
+<<<<<<< HEAD
     /* Container utility */
     .container {
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
     }
+=======
+    /* Fixed Socials Panel (on the right) */
+    .fixed-socials {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background: rgba(185,168,156, 0.8); /* partial brownish background */
+      padding: 10px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      z-index: 10000;
+    }
+    .fixed-socials a {
+      display: block;
+      margin: 10px 0;
+    }
+    .fixed-socials img {
+      width: 32px;
+      height: 32px;
+      object-fit: cover;
+      border: 1px solid #b9a89c;
+      border-radius: 4px;
+    }
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
 
     /* Hero / Banner Section */
     #home {
       position: relative;
+<<<<<<< HEAD
       min-height: 80vh;
       background: url('images/35.jpg') center center/cover no-repeat;
       display: flex;
@@ -71,6 +162,67 @@
       justify-content: center;
       text-align: center;
       color: #fff;
+=======
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 40px 0;
+    }
+    /* Video Background */
+    #banner-video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+    /* Dumping Collage Container */
+    #banner-collage {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    #banner-collage img {
+      position: absolute;
+      width: 220px;
+      height: 140px;
+      object-fit: cover;
+      opacity: 0;
+      border: 2px solid #b9a89c;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    @keyframes drop {
+      from { transform: translateY(-250px) rotate(-15deg); opacity: 0; }
+      to { transform: translateY(0) rotate(0deg); opacity: 1; }
+    }
+    .drop {
+      animation: drop 0.8s ease-out forwards;
+    }
+    /* Banner Content */
+    .banner-content {
+      text-align: center;
+      max-width: 600px;
+      padding: 20px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .banner-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #3d2c1e;
+    }
+    .banner-content p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      color: #3d2c1e;
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
     }
     #home::before {
       content: "";
@@ -96,15 +248,36 @@
     .btn {
       display: inline-block;
       padding: 12px 25px;
+<<<<<<< HEAD
       background-color: #ff6600;
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
+=======
+      background-color: #b9a89c;
+      color: #3d2c1e;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
       transition: background-color 0.3s;
     }
     .btn:hover {
-      background-color: #ff4500;
+      background-color: #a1907a;
+    }
+
+    /* Featured Products Section */
+    #products {
+      background: rgba(255,255,255, 0.8);
+      padding: 60px 20px;
+      backdrop-filter: blur(6px);
+    }
+    #products h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #3d2c1e;
+      margin-bottom: 30px;
     }
 
     /* Products Section */
@@ -118,15 +291,22 @@
       font-size: 2rem;
     }
     .product-grid {
+      max-width: 1200px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+<<<<<<< HEAD
       gap: 20px;
+=======
+      gap: 25px;
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
     }
     .product-item {
-      background-color: #fff;
+      background: #f8f4f0;
       padding: 15px;
-      border: 1px solid #ddd;
+      border-radius: 8px;
       text-align: center;
+<<<<<<< HEAD
       transition: transform 0.3s;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -146,9 +326,45 @@
     #designs {
       padding: 50px 20px;
       background-color: #fefefe;
+=======
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid #dcd3cb;
+      backdrop-filter: blur(4px);
+    }
+    .product-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .product-item img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #dcd3cb;
+    }
+    .product-item h3 {
+      font-size: 1.2rem;
+      color: #3d2c1e;
+      margin-bottom: 5px;
+    }
+    .product-item p {
+      font-size: 1rem;
+      color: #a1907a;
+      margin-bottom: 15px;
+    }
+
+    /* Our Designs Section */
+    #designs {
+      background: rgba(255,255,255, 0.8);
+      padding: 60px 20px;
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
       text-align: center;
+      backdrop-filter: blur(6px);
     }
     #designs h2 {
+      font-size: 2rem;
+      color: #3d2c1e;
       margin-bottom: 10px;
       font-size: 2rem;
     }
@@ -157,8 +373,15 @@
       font-size: 1rem;
       color: #555;
     }
+    #designs p {
+      color: #6e5e53;
+      margin-bottom: 30px;
+      font-size: 1rem;
+    }
     .swiper-container {
       width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
       padding-top: 20px;
       padding-bottom: 40px;
       position: relative;
@@ -170,16 +393,24 @@
     }
     .swiper-slide img {
       max-width: 100%;
+<<<<<<< HEAD
       max-height: 300px; /* Limit carousel image size */
       object-fit: cover;
       border: 1px solid #ddd;
       border-radius: 5px;
       padding: 5px;
+=======
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 5px;
+      border: 2px solid #b9a89c;
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
       transition: transform 0.3s;
     }
     .swiper-slide img:hover {
       transform: scale(1.05);
     }
+<<<<<<< HEAD
     /* Make the navigation arrows clickable (pointer) */
     .swiper-button-next,
     .swiper-button-prev {
@@ -210,29 +441,164 @@
       padding: 12px;
       margin: 10px 0;
       border: 1px solid #ccc;
-      border-radius: 5px;
+=======
+    .swiper-button-next, .swiper-button-prev {
+      color: #b9a89c;
     }
+    .swiper-button-next::after, .swiper-button-prev::after {
+      font-size: 24px;
+    }
+    .swiper-pagination-bullet {
+      background: #b9a89c;
+    }
+
+    /* Product Reviews Section */
+    .reviews-section {
+      background: rgba(255,255,255, 0.8);
+      padding: 60px 20px;
+      color: #3d2c1e;
+      text-align: center;
+      backdrop-filter: blur(6px);
+    }
+    .reviews-section h2 {
+      font-size: 2rem;
+      color: #3d2c1e;
+      margin-bottom: 30px;
+    }
+    .review-images-section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: #f8f4f0;
+      border: 1px solid #dcd3cb;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+    #reviews-collage {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+    #reviews-collage img {
+      position: absolute;
+      width: 200px;
+      height: 140px;
+      object-fit: cover;
+      opacity: 0;
+      border: 1px solid #dcd3cb;
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+<<<<<<< HEAD
     form button {
       background-color: #333;
       color: #fff;
       font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s;
+=======
+    .review-form {
+      margin-top: 30px;
+      text-align: left;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    form button:hover {
-      background-color: #555;
+    .review-form h3 {
+      font-size: 1.3rem;
+      color: #3d2c1e;
+      margin-bottom: 15px;
+    }
+    .review-form form {
+      display: flex;
+      flex-direction: column;
+    }
+    .review-form input,
+    .review-form textarea {
+      background: #fff;
+      color: #3d2c1e;
+      border: 1px solid #dcd3cb;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      outline: none;
+    }
+    .review-form button {
+      background: #b9a89c;
+      color: #3d2c1e;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      padding: 12px;
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
+      cursor: pointer;
+      transition: background 0.3s;
+      align-self: flex-start;
+    }
+    .review-form button:hover {
+      background: #a1907a;
     }
 
+<<<<<<< HEAD
+=======
+    /* Contact Section */
+    #contact {
+      background: rgba(255,255,255, 0.8);
+      padding: 60px 20px;
+      text-align: center;
+      backdrop-filter: blur(6px);
+    }
+    #contact h2 {
+      font-size: 2rem;
+      color: #3d2c1e;
+      margin-bottom: 30px;
+    }
+    /* Use JavaScript to handle form submit automatically */
+    #contact form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    #contact form input,
+    #contact form textarea,
+    #contact form button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #dcd3cb;
+      border-radius: 5px;
+      outline: none;
+      font-size: 1rem;
+      color: #3d2c1e;
+    }
+    #contact form input, #contact form textarea {
+      background: #fff;
+    }
+    #contact form button {
+      background: #b9a89c;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #contact form button:hover {
+      background: #a1907a;
+    }
+
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
     /* Footer */
     footer {
-      background-color: #333;
-      color: #fff;
+      background: #fff;
+      color: #3d2c1e;
       text-align: center;
       padding: 20px;
       margin-top: 20px;
+      border-top: 2px solid #b9a89c;
     }
     footer p {
       margin: 0;
+<<<<<<< HEAD
     }
     .social-links {
       display: flex;
@@ -249,10 +615,14 @@
     }
     .social-links a img:hover {
       opacity: 0.8;
+=======
+      font-size: 0.9rem;
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
     }
   </style>
 </head>
 <body>
+<<<<<<< HEAD
 
   <!-- Header -->
   <header>
@@ -269,13 +639,61 @@
 
   <!-- Hero / Banner Section -->
   <section id="home">
+=======
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <h1>Bestie Fashion Shop</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#reviews">Product Reviews</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Fixed Socials Panel -->
+  <div class="fixed-socials">
+    <a href="https://www.facebook.com/profile.php?id=61574490534554" target="_blank">
+      <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/Facebook-Logo.jpg" alt="Facebook Logo">
+    </a>
+    <a href="https://www.instagram.com/" target="_blank">
+      <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/instagram%20logo.jpg" alt="Instagram Logo">
+    </a>
+    <a href="https://www.tiktok.com/@carlaabanador21?is_from_webapp=1&sender_device=pc" target="_blank">
+      <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/tiktok%20logo.jpg" alt="TikTok Logo">
+    </a>
+    <a href="https://shopee.ph/bestiefashionshop?entryPoint=ShopBySearch&searchKeyword=bestie%20fashion%20shop" target="_blank">
+      <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/shopee%20logo.jpg" alt="Shopee Logo">
+    </a>
+  </div>
+
+  <!-- Hero / Banner Section -->
+  <section id="home">
+    <!-- Video Banner -->
+    <video autoplay muted loop id="banner-video">
+      <source src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/video%20banner.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- Dumping Collage Container -->
+    <div id="banner-collage"></div>
+    <!-- Banner Content -->
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
     <div class="banner-content">
       <h2>Welcome to Our Store!</h2>
-      <p>We sell high-quality bags, garments, gold, and much more!</p>
+      <p>
+        Fall in love with our signature products and discover the perfect range of high-quality 
+        bags, garments, gold, and much more.<br>
+        We also accept bulk orders for garments and bags.
+      </p>
       <a href="#products" class="btn">Explore Products</a>
     </div>
   </section>
 
+<<<<<<< HEAD
   <!-- Products Section -->
   <section id="products">
     <div class="container">
@@ -296,11 +714,46 @@
           <h3>Gold</h3>
           <p>$1000.00</p>
         </div>
+=======
+  <!-- Featured Products Section -->
+  <section id="products">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <div class="product-item">
+        <a href="all_products.html#bags">
+          <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/1.jpg" alt="Bag">
+        </a>
+        <h3>
+          <a href="all_products.html#bags" style="color:#3d2c1e; text-decoration:none;">Bag</a>
+        </h3>
+        <p>$50.00</p>
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
       </div>
+      <div class="product-item">
+        <a href="all_products.html#garments">
+          <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/dresses/6.jpg" alt="Garment">
+        </a>
+        <h3>
+          <a href="all_products.html#garments" style="color:#3d2c1e; text-decoration:none;">Garment</a>
+        </h3>
+        <p>$30.00</p>
+      </div>
+      <div class="product-item">
+        <a href="all_products.html#golds">
+          <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/golds/1.jpg" alt="Gold">
+        </a>
+        <h3>
+          <a href="all_products.html#golds" style="color:#3d2c1e; text-decoration:none;">Gold</a>
+        </h3>
+        <p>$1000.00</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 30px;">
       <a href="all_products.html" class="btn">View All Items</a>
     </div>
   </section>
 
+<<<<<<< HEAD
   <!-- Designs Section (Carousel) -->
   <section id="designs">
     <div class="container">
@@ -315,15 +768,43 @@
           <div class="swiper-slide"><img src="images/7.jpg" alt="Design 7"></div>
           <div class="swiper-slide"><img src="images/8.jpg" alt="Design 8"></div>
           <!-- Add more slides if you like -->
+=======
+  <!-- Our Designs Section -->
+  <section id="designs">
+    <h2>Our Designs</h2>
+    <p>Explore our latest designs that complement our collection.</p>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Slides for Dresses -->
+        <div class="swiper-slide">
+          <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/dresses/1.jpg" alt="Dress 1">
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
         </div>
-        <!-- Pagination and Navigation Controls -->
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-slide">
+          <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/dresses/2.jpg" alt="Dress 2">
+        </div>
+        <div class="swiper-slide">
+          <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/dresses/3.jpg" alt="Dress 3">
+        </div>
+        <!-- Slides for Golds -->
+        <div class="swiper-slide">
+          <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/golds/2.jpg" alt="Gold 2">
+        </div>
+        <div class="swiper-slide">
+          <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/golds/3.jpg" alt="Gold 3">
+        </div>
+        <div class="swiper-slide">
+          <img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/golds/4.png" alt="Gold 4">
+        </div>
+        <!-- We'll dynamically add the bag slides (1.jpg to 29.jpg) below -->
       </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
   </section>
 
+<<<<<<< HEAD
   <!-- Contact Section -->
   <section id="contact">
     <div class="container">
@@ -333,10 +814,27 @@
         <input type="email" name="email" placeholder="Your Email" required />
         <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
         <button type="submit">Send</button>
+=======
+  <!-- Product Reviews Section -->
+  <section class="reviews-section" id="reviews">
+    <h2>Product Reviews</h2>
+    <!-- Dumping Collage for reviews (no heading) -->
+    <div class="review-images-section">
+      <div id="reviews-collage"></div>
+    </div>
+    <!-- Review Form Only (no sample reviews) -->
+    <div class="review-form">
+      <h3>Write a Review</h3>
+      <form action="#" method="POST">
+        <input type="text" name="reviewerName" placeholder="Your Name" required>
+        <textarea name="reviewText" rows="4" placeholder="Your Review" required></textarea>
+        <button type="submit">Submit Review</button>
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
       </form>
     </div>
   </section>
 
+<<<<<<< HEAD
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -357,13 +855,32 @@
         </a>
       </div>
     </div>
+=======
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <!-- "Automated" submission via JavaScript (no mailto:) -->
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Bestie Fashion Shop. All Rights Reserved.</p>
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
   </footer>
 
   <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
+    // Initialize Swiper for Our Designs
     var swiper = new Swiper('.swiper-container', {
       loop: true,
+<<<<<<< HEAD
       autoplay: {
         delay: 3000,
         disableOnInteraction: false,
@@ -379,11 +896,103 @@
         prevEl: '.swiper-button-prev',
       },
       // Optional responsive breakpoints
+=======
+      autoplay: { delay: 3000, disableOnInteraction: false },
+      slidesPerView: 3,
+      spaceBetween: 20,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
       breakpoints: {
         640: { slidesPerView: 1 },
         768: { slidesPerView: 2 },
         1024: { slidesPerView: 3 }
       }
+<<<<<<< HEAD
+=======
+    });
+
+    // Dynamically add Bag slides (1.jpg to 29.jpg)
+    const swiperWrapper = document.querySelector('.swiper-wrapper');
+    for (let i = 1; i <= 29; i++) {
+      const slide = document.createElement('div');
+      slide.className = 'swiper-slide';
+      slide.innerHTML = `<img src="file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/${i}.jpg" alt="Bag ${i}">`;
+      swiperWrapper.appendChild(slide);
+    }
+    swiper.update();
+    
+    // Dumping Collage in Banner (bags, dresses, golds)
+    document.addEventListener("DOMContentLoaded", function(){
+      const bannerCollage = document.getElementById("banner-collage");
+      const mainImages = [];
+      for(let i = 1; i <= 29; i++){
+        mainImages.push(`file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/${i}.jpg`);
+      }
+      const dressImages = [];
+      for(let i = 1; i <= 6; i++){
+        dressImages.push(`file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/dresses/${i}.jpg`);
+      }
+      const goldImages = ["1.jpg","2.jpg","3.jpg","4.png","5.jpg","6.jpg","7.jpg","9.jpg","10.jpg"]
+                         .map(file => `file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/golds/${file}`);
+      const allImages = mainImages.concat(dressImages, goldImages);
+      let dumpedCount = 0;
+      const maxDumped = 20;
+      function dumpImage() {
+        if(dumpedCount >= maxDumped) return;
+        const img = document.createElement("img");
+        const randomIndex = Math.floor(Math.random() * allImages.length);
+        img.src = allImages[randomIndex];
+        const finalLeft = Math.random() * 80;
+        const finalTop = Math.random() * 70;
+        img.style.left = finalLeft + "%";
+        img.style.top = "-250px";
+        img.classList.add("drop");
+        setTimeout(() => { img.style.top = finalTop + "%"; }, 800);
+        bannerCollage.appendChild(img);
+        dumpedCount++;
+      }
+      const dumpInterval = setInterval(() => {
+        dumpImage();
+        if(dumpedCount >= maxDumped) clearInterval(dumpInterval);
+      }, 800);
+    });
+
+    // Dumping Collage for Review Images
+    document.addEventListener("DOMContentLoaded", function(){
+      const reviewsCollage = document.getElementById("reviews-collage");
+      const reviewImages = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"];
+      const basePath = "file:///C:/Users/reynv/Business-Page_Bestie-Fashion-Shop/images/Reviews/";
+      let dumpedCount = 0;
+      const maxDumped = 8;
+      function dumpReviewImage() {
+        if(dumpedCount >= maxDumped) return;
+        const img = document.createElement("img");
+        const randomIndex = Math.floor(Math.random() * reviewImages.length);
+        img.src = basePath + reviewImages[randomIndex];
+        const finalLeft = Math.random() * 80;
+        const finalTop = Math.random() * 70;
+        img.style.left = finalLeft + "%";
+        img.style.top = "-250px";
+        img.classList.add("drop");
+        setTimeout(() => { img.style.top = finalTop + "%"; }, 800);
+        reviewsCollage.appendChild(img);
+        dumpedCount++;
+      }
+      const dumpInterval = setInterval(() => {
+        dumpReviewImage();
+        if(dumpedCount >= maxDumped) clearInterval(dumpInterval);
+      }, 800);
+    });
+
+    // Simulate an "automated" form submission for Contact (no mailto:)
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // For a real submission, you'd do a fetch() or AJAX call here.
+      alert('Your message has been sent automatically!');
+      contactForm.reset();
+>>>>>>> 9923592 (Update design: new palette, fixed socials panel, and improved layout)
     });
   </script>
 </body>
